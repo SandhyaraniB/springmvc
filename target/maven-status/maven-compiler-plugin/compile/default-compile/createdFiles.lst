@@ -1,0 +1,10 @@
+com/bridgeit/dao/LoginUserDao.class
+com/bridgeit/service/UserService.class
+com/bridgeit/model/User.class
+com/bridgeit/controll/RegistrationController.class
+com/bridgeit/controll/passwordController.class
+com/bridgeit/controll/Logincontroller.class
+com/bridgeit/util/Utility.class
+com/bridgeit/dao/forgotPassword.class
+com/bridgeit/model/LoginInfo.class
+com/bridgeit/dao/UserDao.class
