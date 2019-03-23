@@ -16,6 +16,9 @@
 		<tr>
 			<td><a href="register">Register</a></td>
 		</tr>	
+		<tr>
+			<td><a href="forgotpassword">forgot password!</a></td>
+		</tr>	
 	</table>
 	
 </body>

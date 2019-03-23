@@ -9,7 +9,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "LoginAndReg")
 public class User 
-{    @Id
+{   
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String firstName;

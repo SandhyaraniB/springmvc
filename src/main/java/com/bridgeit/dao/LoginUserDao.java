@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import com.bridgeit.model.LoginInfo;
+import com.bridgeit.model.PasswordInfo;
 import com.bridgeit.model.User;
 
 
@@ -64,6 +65,29 @@ public class LoginUserDao implements UserDao
 	        return isValidUser;
         
 	}
-	
-	
-}
+	public boolean checkIsUserEmailPresent(PasswordInfo passwordEmail)
+	{
+		boolean isValidUser = false;
+		User user = null;
+		Configuration config = new Configuration().configure().addAnnotatedClass(User.class);
+		  @SuppressWarnings("deprecation")
+		  SessionFactory sessionFactory=config.buildSessionFactory();
+		  Session session=sessionFactory.openSession();
+	        String hql="from User where email=? ";
+	        try
+	        {
+	            Query query=session.createQuery(hql);
+	            query.setParameter(0,passwordEmail.getEmail());
+	            user = (User)query.uniqueResult();
+	            if(user != null)
+	            	isValidUser = true;
+	        }catch(Exception e)
+	        {
+	            e.printStackTrace();
+	        }
+	        finally{
+	            session.close();
+	        }
+	        return isValidUser;	
+	        }
+	}

@@ -3,8 +3,8 @@
 /home/admin1/Desktop/springMVC/springmvc/src/main/java/com/bridgeit/service/UserService.java
 /home/admin1/Desktop/springMVC/springmvc/src/main/java/com/bridgeit/model/User.java
 /home/admin1/Desktop/springMVC/springmvc/src/main/java/com/bridgeit/dao/LoginUserDao.java
+/home/admin1/Desktop/springMVC/springmvc/src/main/java/com/bridgeit/model/PasswordInfo.java
 /home/admin1/Desktop/springMVC/springmvc/src/main/java/com/bridgeit/controll/Logincontroller.java
 /home/admin1/Desktop/springMVC/springmvc/src/main/java/com/bridgeit/util/Utility.java
 /home/admin1/Desktop/springMVC/springmvc/src/main/java/com/bridgeit/controll/passwordController.java
 /home/admin1/Desktop/springMVC/springmvc/src/main/java/com/bridgeit/model/LoginInfo.java
-/home/admin1/Desktop/springMVC/springmvc/src/main/java/com/bridgeit/dao/forgotPassword.java

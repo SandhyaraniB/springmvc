@@ -4,13 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>forgot password</title>
 </head>
 <body>
- <form action="">
-  Email: <input type="text" name="email" value=""><br>
+<form:form id="forgotform" modelAttribute="forgotpassword" action="forgotprocess"
+		method="post">
+ <tr>
+  <td><form:label path="forgotpassword">forgotpassword</form:label></td>
+  <td><form:input path="forgotpassword" name="forgotpassword" id="forgotpassword"/></td>
+</tr>
   <input type="submit" value="Submit">
-</form>	
+</form:form>	
 </body>
 </html>

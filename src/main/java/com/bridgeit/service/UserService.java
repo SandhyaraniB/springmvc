@@ -5,6 +5,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bridgeit.dao.LoginUserDao;
 import com.bridgeit.model.LoginInfo;
+import com.bridgeit.model.PasswordInfo;
 import com.bridgeit.model.User;
 import com.bridgeit.util.Utility;
 
@@ -24,6 +25,10 @@ public class UserService {
 	
 	public boolean login(LoginInfo loginInfo) {
 		return loginUserDao.checkUserIsPresent(loginInfo);
+	}
+	public boolean forgot(PasswordInfo passwordInfo)
+	{
+		return loginUserDao.checkIsUserEmailPresent(passwordInfo);
 	}
 	
 	/**
