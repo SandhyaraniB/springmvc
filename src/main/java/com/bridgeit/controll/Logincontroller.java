@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.bridgeit.model.LoginInfo;
 import com.bridgeit.service.UserService;
-
-
 @Controller
 public class Logincontroller 
 {

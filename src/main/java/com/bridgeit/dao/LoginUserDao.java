@@ -3,6 +3,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 import com.bridgeit.model.LoginInfo;
 import com.bridgeit.model.PasswordInfo;
@@ -22,6 +23,7 @@ public class LoginUserDao implements UserDao
 		Configuration config = new Configuration().configure().addAnnotatedClass(User.class);
 		//The SessionFactory is a factory of session and client of ConnectionProvider. It holds second level cache (optional) of data
 		
+		@SuppressWarnings("deprecation")
 		SessionFactory sessionFactory = config.buildSessionFactory();
 		//session is interface between application and database
 	    Session session = sessionFactory.openSession();
@@ -69,25 +71,13 @@ public class LoginUserDao implements UserDao
 	{
 		boolean isValidUser = false;
 		User user = null;
-		Configuration config = new Configuration().configure().addAnnotatedClass(User.class);
-		  @SuppressWarnings("deprecation")
-		  SessionFactory sessionFactory=config.buildSessionFactory();
-		  Session session=sessionFactory.openSession();
-	        String hql="from User where email=? ";
-	        try
-	        {
-	            Query query=session.createQuery(hql);
-	            query.setParameter(0,passwordEmail.getEmail());
-	            user = (User)query.uniqueResult();
-	            if(user != null)
-	            	isValidUser = true;
-	        }catch(Exception e)
-	        {
-	            e.printStackTrace();
-	        }
-	        finally{
-	            session.close();
-	        }
-	        return isValidUser;	
-	        }
+		//creating session factory object
+		SessionFactory sessionfactory=new AnnotationConfiguration().configure().buildSessionFactory();
+        Session session = sessionfactory.openSession(); //Creating a new session object for fetching user object
+		session.beginTransaction(); //Again Open the transaction of the session object
+
+		user = (User) session.get(User.class,1);
+		System.out.println(user);
+		return isValidUser;
 	}
+}

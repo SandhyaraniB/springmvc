@@ -7,7 +7,9 @@
 <title>Registration</title>
 </head>
 <body>
-     <h2 align="center">Register</h2>
+     <h1 align="center">Register</h1>
+     <h2 style="background-color: blue;"></h2>
+     
 	<form:form id="regForm" modelAttribute="user" action="registerProcess"
 		method="post">
 		<table align="center">

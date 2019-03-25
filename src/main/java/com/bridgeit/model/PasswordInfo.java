@@ -1,5 +1,8 @@
 package com.bridgeit.model;
 
+import javax.persistence.Table;
+
+@Table(name = "LoginAndReg")
 public class PasswordInfo
 {
 	private String email;
